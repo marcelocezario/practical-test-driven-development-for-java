@@ -26,10 +26,8 @@ public class ValidateISBNTest {
     public void nineDigitISBNsAreNotAllowed() {
         ValidateISBN validator = new ValidateISBN();
         validator.checkISBN("123456789");
-        /**
-         * junit5
-         * assertThrows(NumberFormatException.class,() -> validator.checkISBN("123456789"));
-         */
+		assertThrows(NumberFormatException.class,
+				() -> validator.checkISBN("123456789"));
     }
 
     @Test
